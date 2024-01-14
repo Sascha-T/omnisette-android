@@ -25,10 +25,10 @@ jobs:
       - name: Install additional rust targets
         run: |
           rustup target add aarch64-linux-android
-          rustup target add arm-linux-android
-          rustup target add armv7-linux-android
+          rustup target add arm-linux-androideabi
+          rustup target add armv7-linux-androideabi
           rustup target add i686-linux-android
-          rustup target add thumbv7neon-linux-android
+          rustup target add thumbv7neon-linux-androideabi
           rustup target add x86_64-linux-android
 
       - name: Cache rust
@@ -40,19 +40,19 @@ jobs:
       - name: Build
         run: |
           cross build --release --target aarch64-linux-android
-          cross build --release --target arm-linux-android
-          cross build --release --target armv7-linux-android
+          cross build --release --target arm-linux-androideabi
+          cross build --release --target armv7-linux-androideabi
           cross build --release --target i686-linux-android
-          cross build --release --target thumbv7neon-linux-android
+          cross build --release --target thumbv7neon-linux-androideabi
           cross build --release --target x86_64-linux-android
 
       - name: Move and rename binaries
         run: |
           cp target/aarch64-linux-android/release/omnisette-server target/omnisette-server-android-aarch64
-          cp target/arm-linux-android/release/omnisette-server target/omnisette-server-android-arm
-          cp target/armv7-linux-android/release/omnisette-server target/omnisette-server-android-armv7
+          cp target/arm-linux-androideabi/release/omnisette-server target/omnisette-server-android-arm
+          cp target/armv7-linux-androideabi/release/omnisette-server target/omnisette-server-android-armv7
           cp target/i686-linux-android/release/omnisette-server target/omnisette-server-android-i686
-          cp target/thumbv7neon-linux-android/release/omnisette-server target/omnisette-server-android-thumbv7neon
+          cp target/thumbv7neon-linux-androideabi/release/omnisette-server target/omnisette-server-android-thumbv7neon
           cp target/x86_64-linux-android/release/omnisette-server target/omnisette-server-android-x86_64
 
       - name: Upload to new release
