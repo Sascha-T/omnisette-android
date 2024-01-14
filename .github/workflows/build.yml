@@ -14,7 +14,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          repository: https://github.com/SideStore/omnisette-server
+          repository: SideStore/omnisette-server
 
       - name: Install rust
         uses: actions-rs/toolchain@v1
