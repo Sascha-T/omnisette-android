@@ -34,9 +34,6 @@ jobs:
       - name: Cache rust
         uses: Swatinem/rust-cache@v2
 
-      - name: Install cross
-        run: cargo install cross
-
       - name: Build
         run: |
           cargo build --release --target=aarch64-linux-android
