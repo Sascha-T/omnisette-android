@@ -13,7 +13,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        repository: https://github.com/SideStore/omnisette-server
+        with:
+          repository: https://github.com/SideStore/omnisette-server
 
       - name: Install rust
         uses: actions-rs/toolchain@v1
